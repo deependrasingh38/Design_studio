@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About us</a>
+            <a href="/services">Our Services</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact us</a>
+        </nav>
+    </header>    
+
+    <main class="container">
+        <h1>Contact us</h1>
+        <div id="msg-message" style="display: none;color: green;">Thanks, Your message has been send Successfully</div>
+        <form action="/contact" method="post">
+            <label for="name">Name : </label><br>
+            <input type="text" name="name" id="name" required><br>
+            <label for="email">Email : </label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message : </label><br>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Website Project.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

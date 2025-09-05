@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: arial;
+            line-height: 1.6;
+            color: #333;
+
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .logo:hover {
+            color: black;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            background-color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            margin-right: 15px;
+        }
+
+        nav a {
+
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+
+        }
+
+        nav a:hover {
+            color: black;
+            font-size: large;
+
+        }
+
+        .signup {
+            background-color: #2a2929;
+            width: 90px;
+            height: 32px;
+            padding: 3px;
+            padding-left: 18px;
+            color: white;
+            border-radius: 3px;
+            font-size: 15px;
+            box-shadow: 5px 6px rgba(68, 68, 68, 0.1)
+        }
+
+        .signup:hover {
+            background-color: black;
+            color: rgb(247, 237, 219);
+
+        }
+
+        .main {
+            display: flex;
+            min-height: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            font-family: "Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            margin-top: 70px;
+        }
+
+        .title {
+            font-size: 64px;
+            font-weight: bold;
+            text-shadow: 0 0 1.7px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+            position: relative;
+            left: 50px;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.5;
+            ;
+            max-width: 450px;
+            font-weight: 300;
+            color: #666;
+            margin-top: 15px;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+            letter-spacing: 0.4px;
+        }
+
+        .start-button {
+            display: inline-block;
+            background-color: #282828;
+            color: white;
+            width: 170px;
+            height: 45px;
+            margin-top: 60px;
+            padding: 10px;
+            padding-left: 41px;
+            border-radius: 2px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+            font-family: arial;
+        }
+
+        .start-button:hover {
+            background-color: black;
+
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 75px;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 3.4rem;
+            color: #666;
+            text-shadow: 0.4px 0.5px 1.5px rgba(0, 0, 0, 0.8);
+            font-weight: 300;
+
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #535252;
+            text-shadow: 0px 0px 1.1px rgba(0, 0, 0, 0.8);
+            position: relative;
+            bottom: 20px;
+        }
+
+        .image-container {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Top Right Image */
+        .image-1 {
+            position: absolute;
+            top: 130px;
+            margin-left: 130px;
+            width: 320px;
+            height: 240px;
+
+        }
+
+        .image-2 {
+            position: relative;
+            top: 180px;
+            left: 20px;
+            width: 372px;
+            height: 220px;
+            z-index: 10;
+
+        }
+
+        .decorative-box {
+            position: relative;
+            background-color: white;
+            border: 2px solid #6d6b6b;
+        }
+
+        .box-1 {
+            width: 100px;
+            height: 100px;
+            z-index: 5;
+            top: 265px;
+            left: 3px;
+        }
+
+        .box-2 {
+            background-color: #282828;
+            width: 75px;
+            height: 75px;
+            position: relative;
+            z-index: 15;
+            top: 425px;
+            color: white;
+            font-size: 2.3rem;
+            padding-left: 26px;
+        }
+
+        .design {
+            min-height: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            font-family: "Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            margin-top: 70px;
+            /* grid-template-columns: 1fr 1fr 1fr; */
+
+        }
+
+        .line-service {
+            font-weight: bold;
+            font-size: 19px;
+            position: relative;
+            bottom: 16px;
+            right: 12px;
+        }
+
+        .services {
+            font-size: 36px;
+            color: rgb(21, 21, 21);
+            font-weight: 540;
+            margin-left: 16px;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+        }
+
+        .design-img {
+            width: 45px;
+            height: 35px;
+        }
+
+        .designing {
+            font-size: 20px;
+            font-weight: 550;
+        }
+
+        .design-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.8px;
+        }
+
+        .whole-grid {
+            margin-top: 35px;
+        }
+
+        .center {
+            max-width: 900px;
+            margin: 0 auto;
+            font-family: "Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            margin-top: 160px;
+        }
+
+        .dream-img {
+            width: 448px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .dream-box {
+            margin-left: 68px;
+        }
+
+        .dream-title {
+            font-size: 31px;
+            font-weight: 550;
+            letter-spacing: 0.6px;
+            color: rgb(35, 35, 35);
+
+        }
+
+        .dream-text {
+            font-size: 0.97rem;
+            line-height: 1.5;
+            color: #666;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+            margin-top: 15px;
+            /* letter-spacing: 0.8px; */
+        }
+
+        .dream-main-text {
+            margin-top: 25px;
+            font-weight: 550;
+        }
+
+        .plus {
+            margin-left: 155px;
+            font-size: 25px;
+        }
+
+        .line-tag {
+            margin-top: 5px;
+        }
+
+        .plus-two {
+            margin-left: 70px;
+            font-size: 25px;
+        }
+
+        .dream-button {
+            background-color: #161616;
+            display: inline-block;
+            width: 150px;
+            color: white;
+            border-radius: 2px;
+            height: 36px;
+            padding: 5px;
+            padding-left: 34px;
+            margin-top: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+            font-family: arial;
+        }
+
+        .center-two {
+            max-width: 900px;
+            margin: 0 auto;
+            font-family: "Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            margin-top: 130px;
+        }
+
+        .process-img {
+            width: 480px;
+            height: 496px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .process-title {
+            font-size: 35px;
+            font-weight: 550;
+            letter-spacing: 0.6px;
+            color: rgb(35, 35, 35);
+        }
+
+        .rocket {
+            background-color: rgb(21 20 20);
+            width: 38px;
+            height: 35px;
+            border-radius: 24px;
+            padding: 7px;
+
+        }
+
+        .rocket-text {
+            margin-top: 10px;
+            font-size: 23px;
+            font-weight: 550;
+        }
+
+        .v-line {
+            position: relative;
+            top: 10px;
+            left: 16px;
+            width: 3px;
+            height: 80px;
+            background: rgb(49, 49, 49);
+
+        }
+
+        .vline-text {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #666;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+            margin-top: 7px;
+        }
+
+        .center-three {
+            max-width: 900px;
+            margin: 0 auto;
+            font-family: "Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            margin-top: 130px;
+        }
+
+        /* .review-img {
+            min-width: 350px;
+            height: 400px;
+            border-radius: 4px;
+            object-fit: cover;
+            z-index: 20;
+        }
+
+        .text-content {
+            margin-left: 53px;
+        }
+
+        .review-title {
+            font-size: 38px;
+            font-weight: 550;
+            letter-spacing: 0.6px;
+            color: rgb(35, 35, 35);
+        }
+
+        .review-content {
+            width: auto;
+            height: 328px;
+            position: relative;
+            display: flex;
+            gap: 30px;
+            right: 400px;
+            background-color: #fff;
+        } */
+
+        .card-one-img {
+            padding-block: 15px;
+        }
+
+        .card-one-img img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        .slider-main {
+            position: relative;
+        }
+
+        .slider-main-box {
+            position: absolute;
+        }
+
+        .slider-main-box {
+            display: flex;
+            background-color: #fff;
+            gap: 30px;
+            width: 80%;
+            right: 0;
+            top: 120px;
+            border: 20px solid #fff;
+            border-radius: 4px;
+            border-bottom: 0;
+        }
+
+        .slider-box {
+            background-color: #1a1919;
+            padding: 30px;
+        }
+
+        .slider-author img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            /* object-fit: cover; */
+        }
+
+        .slider-author {
+            padding-block: 30px;
+        }
+
+        .slider-author-loc {
+            margin-left: 58px;
+            font-size: small;
+            color: #a5a3a3;
+            letter-spacing: 0.8px;
+            position: absolute;
+            bottom: 60px;
+        }
+
+        .quote {
+            font-size: 60px;
+        }
+
+        .slider-main-img {
+            height: 500px;
+            width: 100%;
+        }
+
+        .slider-icon {
+            position: absolute;
+            bottom: -34px;
+        }
+
+        .slider-icon ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .slider-icon ul li {
+            background-color: #e3e1e1;
+            padding: 3px;
+            font-size: 15px;
+        }
+
+        .slider-title {
+            font-size: 34px;
+            font-weight: 550;
+            letter-spacing: 0.6px;
+            color: rgb(35, 35, 35);
+        }
+
+        .pre-footer {
+            width: 900px;
+            margin: 0px auto;
+
+            margin-top: 160px;
+        }
+
+        .pre-footer-title {
+            font-size: 34px;
+            font-weight: 550;
+            letter-spacing: 0.6px;
+            color: rgb(35, 35, 35);
+            text-align: center;
+        }
+
+        .pre-footer-text {
+            margin-top: 20px;
+            font-size: 13px;
+            font-weight: 550;
+            color: #585656cc;
+            text-align: center;
+            letter-spacing: 0.01rem;
+        }
+
+        .newsletter {
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: -40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            max-width: 500px;
+            margin: auto;
+            border: none;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            top: 85px;
+            background-color: #fff;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .newsletter-form button {
+            background: #111;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #111;
+            color: #ccc;
+            padding: 60px 20px;
+            margin-top: 80px;
+            z-index: 1;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo h2 {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer-social a {
+            color: #ccc;
+            margin-right: 12px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #fff;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+
+            <nav class="nav">
+                <div class="logo">DesignStudio</div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+                <div class="signup">Sign up</div>
+
+            </nav>
+
+        </header>
+        <div class="main">
+            <div class="left-content">
+                <p class="title">Interior Design</p>
+                <p class="description">
+                    Step into a world where the art of Interior Design is meticulously
+                    crafted to bring together timeless elegance and cutting-edge
+                    modern Innovation, Allowing you to transform your living spaces
+                    into the epitome of luxury and sophistication
+                </p>
+                <a href="/contact" class="start-button">Start Project</a>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">400+ </div>
+                        <div class="stat-label">Project Complete</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">600+</div>
+                        <div class="stat-label">Satisfied Clients</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Unique Styles</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="decorative-box box-1"></div>
+                <div class="image-container image-1">
+                    <img src="http://hhdinteriors.com/wp-content/uploads/2024/08/Image.png"
+                        alt="Modern minimalist living room">
+                </div>
+                <div class="image-container image-2">
+                    <img src="https://hhdinteriors.com/wp-content/uploads/2024/08/Image-1.png"
+                        alt="Elegant living space with plants">
+                </div>
+            </div>
+            <div class="box-2">↓</div>
+        </div>
+        <div class=" design ">
+            <div class=" services"><span class=" line-service">_______</span>Our Services</div>
+            <div class="whole-grid grid grid-cols-3 gap-4 mb-12">
+                <div class="flex gap-4 designing"><img src="image/ceiling-removebg-preview.png" alt=""
+                        class="design-img">Lighting Design</div>
+                <div class="flex gap-4 designing"><img src="image/living-room-removebg-preview.png" alt=""
+                        class="design-img">Interior Design</div>
+                <div class="flex gap-4 designing"><img src="image/outdoor-activity.png" alt="" class="design-img">Outdoor
+                    Design</div>
+                <div class="design-text ml-4"> Achieve the perfect balance of ambient, task, and accent lighting for a
+                    functional atmosphere</div>
+                <div class="design-text"> From concept to completion, we oversee every detail to bring your vision to
+                    life efficiently</div>
+                <div class="design-text"> Celebrate the changing seasons with our favourite seasonal great outdoor decor
+                    services</div>
+            </div>
+        </div>
+        <div class="center grid grid-cols-2">
+            <div><img
+                    src="https://images.unsplash.com/photo-1600493504591-aa1849716b36?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" class="dream-img"></div>
+            <div class="dream-box">
+                <p class="dream-title ">Designing Your Dream With Brilliance</p>
+                <p class="dream-text">Elevate your spaces with besopke interior designs that reflect your unique style
+                    and aspiration, crafted with precision and birlliance for an unforgettable living experience</p>
+                <p class="dream-main-text">Living Room Interior Design <span class="plus">+</span></p>
+                <hr class="line-tag text-stone-300 ">
+                <p class="dream-main-text">Commercial Office Room Interior Design <span class="plus-two">+</span></p>
+                <hr class="line-tag text-stone-300 ">
+                <a href="/contact" class="dream-button">Learn More</a>
+            </div>
+        </div>
+        <div class="center-two grid grid-cols-2">
+            <div>
+                <p class="process-title">Designing Your Dream In Three Simple Steps</p>
+                <div class="flex gap-12 rocket-text"><img src="image/rocket.png" alt="" class="rocket">Start Project</div>
+                <div class="flex gap-20">
+                    <p class="v-line"></p>
+                    <p class="vline-text">Embark on your design adventure by initiating your projet. Share your vision
+                        and set the stage for a bespoke design experience</p>
+                </div>
+                <div class="flex gap-12 rocket-text"><img src="image/idea.png" alt="" class="rocket">Craft</div>
+                <div class="flex gap-20">
+                    <p class="v-line"></p>
+                    <p class="vline-text">Embark on your design adventure by initiating your projet. Share your vision
+                        and set the stage for a bespoke design experience</p>
+                </div>
+                <div class="flex gap-12 rocket-text"><img src="image/quality-control.png" alt="" class="rocket">Execute</div>
+                <div class="flex gap-20">
+                    <p></p>
+                    <p class="vline-text">Embark on your design adventure by initiating your projet. Share your vision
+                        and set the stage for a bespoke design experience</p>
+                </div>
+            </div>
+            <div class="dream-box">
+                <img src="https://images.unsplash.com/photo-1558442074-3c19857bc1dc?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" class="process-img">
+            </div>
+        </div>
+        <div class="center-three flex slider-main">
+            <div class="w-50"><img class="slider-main-img"
+                    src="https://plus.unsplash.com/premium_photo-1669842468224-364235e9c9ef?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            </div>
+            <div class="w-50">
+                <h2 style="margin-left: 68px;" class="slider-title">What Our Customer Says About Us
+                </h2>
+            </div>
+            <div class="slider-main-box text-white">
+                <div class="slider-box">
+                    <span class="quote"><i class="fa-solid fa-quote-left"></i></span>
+                    <p>Working with your design team was an
+                        absolute pleasure. The attention to detail
+                        and creativity exceeded my expectations.
+                        Thank you for making my home beautiful!</p>
+                    <div class="slider-author flex gap-4"><img
+                            src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg"> <span>Sophie
+                            Carter</span></div>
+                    <p class="slider-author-loc">Texas,USA</p>
+
+                </div>
+                <div class="slider-box">
+                    <span class="quote"><i class="fa-solid fa-quote-left"></i></span>
+                    <p>Working with your design team was an
+                        absolute pleasure. The attention to detail
+                        and creativity exceeded my expectations.
+                        Thank you for making my home beautiful!</p>
+                    <div class="slider-author flex gap-4"><img
+                            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <span>harry styles</span>
+                    </div>
+                    <p class="text=zinc-500 slider-author-loc">Tornado,japan</p>
+                </div>
+            </div>
+            <div class="slider-icon">
+                <ul class="">
+                    <li><i class="fa-solid fa-arrow-left"></i></li>
+                    <li><i class="fa-solid fa-arrow-right"></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pre-footer">
+            <div class="pre-footer-title">Subscribe to Our Newsletter <br> For Design Insights</div>
+            <div class="pre-footer-text">Be the first to discover trends, inspirations, and special offers as <br> we
+                bring the world of design directly to your inbox</div>
+        </div>
+
+    </div>
+
+    <section class="newsletter">
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit" id="clickMe">Subscribe </button>
+            <script>
+                const btn = document.getElementById('clickMe');
+                btn.addEventListener("click", () => {
+                    alert("Thanks For Your Support");
+                });
+            </script>
+        </form>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Design Studio</h2>
+                <p>Design Studio your premier destination for luxury and modern interior design</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Interior design</a></li>
+                    <li><a href="#">Outdoor design</a></li>
+                    <li><a href="#">Lighting design</a></li>
+                    <li><a href="#">Office design</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Press inquiries</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="mailto:info@vivadecor.com">info@DesignStudio.com</a></li>
+                    <li>Design Avenue Cityville,<br>CA 90210 United States</li>
+                </ul>
+            </div>
+
+        <div class="footer-bottom">
+            © 2025 Design Studio. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

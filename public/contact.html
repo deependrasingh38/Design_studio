@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            background: url("https://plus.unsplash.com/premium_photo-1748499237751-608b1e787d76?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover no-repeat fixed;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo:hover {
+            color: black;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 15px;
+            background-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            margin-right: 15px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            text-decoration: none;
+            text-underline-offset: 10px;
+        }
+
+        .nav-links a:hover {
+            font-size: large;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+
+        .register-link {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .register-link a {
+            text-decoration: none;
+        }
+
+        .login-page {
+            color: white;
+        }
+
+        .login-page:hover {
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            font-size: large;
+        }
+
+        .contact-wrap {
+            position: relative;
+            max-width: 1200px;
+            margin: 0px 120px;
+            padding: 110px 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .info {
+            flex: 1 1 45%;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            align-items: flex-start;
+            padding: 28px;
+        }
+
+        .info h2 {
+            font-size: 36px;
+            text-align: left;
+            letter-spacing: .5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 18px;
+        }
+
+        .info-item i {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .08);
+            font-size: 16px;
+            color: #fff;
+            flex: 0 0 38px;
+        }
+
+        .info-item span {
+            color: #eaf2f9;
+        }
+
+        /* RIGHT: form */
+        .form-card {
+            flex: 1 1 55%;
+            padding: 28px;
+        }
+
+        .form-card h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            /* var(--gap) */
+        }
+
+        input,
+        textarea,
+        button {
+            font-family: inherit;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            color: #fff;
+            background: rgba(0, 0, 0, .6);
+            /* var(--glass) */
+            padding: 14px 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #aab7c4;
+        }
+
+        /* make textarea full width under the two inputs */
+        textarea {
+            grid-column: 1 / -1;
+            min-height: 260px;
+            resize: vertical;
+        }
+
+        button {
+            grid-column: 2;
+            justify-self: end;
+            padding: 12px 28px;
+            background: #2f7dd3;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: .5px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+       
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+
+.popup-content {
+  background: #fff;
+  color: #000;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.popup-content h2 {
+  margin-bottom: 10px;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2f7dd3;
+  color: white;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #1e5dab;
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="logo">DesignStudio</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <ul class="register-link">
+            <li><a href="/login-page" class="login-page">Login</a></li>
+        </ul>
+    </nav>
+    <section class="contact-wrap">
+        <!-- LEFT: Contact info -->
+        <div class="info">
+            <h2>Contact</h2>
+
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Murlipura, Jaipur, India</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>DesignStudio95@email.com</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+91 8954621024</span>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Mon – Fri 8:00 AM to 5:00 PM</span>
+            </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="form-card">
+            <h2>CONTACT US</h2>
+
+            <form action="/contact" method="post">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+  
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>Thank You!</h2>
+    <p>Your message has been submitted successfully.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+<script>
+(function(){
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('success') === '1'){
+        const popup = document.getElementById('popup');
+        if(popup){
+            popup.style.display = "flex"; // show popup after redirect
+        }
+
+        // remove ?success=1 from URL
+        const url = new URL(window.location);
+        url.searchParams.delete('success');
+        window.history.replaceState({}, document.title, url.toString());
+    }
+
+    // close function
+    window.closePopup = function () {
+        const popup = document.getElementById('popup');
+        if(popup){
+            popup.style.display = "none";
+        }
+    };
+})();
+</script>
+
+
+</body>
+
+</html>
